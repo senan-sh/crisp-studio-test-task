@@ -45,7 +45,37 @@ for (const heroImage of images) {
 
 // Product reviewer
 const productsWithChangableCategories = document.querySelectorAll(".product-reviewer ul li");
-const categoryProducts = document.querySelectorAll(".secondary-products .product-small-wrapper");
+const secondaryProducts = document.querySelectorAll(".secondary-products .product-small-wrapper");
+const mainProduct = document.querySelector(".primary-product .primary-product-item");
+
+const changeColorOfCurrentProductListPictures = (currentColor) => {
+  secondaryProducts.forEach((_categoryProductDiv) => {
+    const svgList = _categoryProductDiv.querySelectorAll("svg");
+    svgList.forEach(_svg => {
+      _svg.style.fill = currentColor;
+      _svg.querySelectorAll("path:not(.except-this)").forEach((_path) => {
+        _path.style.fill = currentColor;
+      })
+    })
+
+  });
+
+  const svgList = mainProduct.querySelectorAll("svg");
+  svgList.forEach(_svg => {
+    _svg.style.fill = currentColor;
+    _svg.querySelectorAll("path:not(.except-this)").forEach((_path) => {
+      _path.style.fill = currentColor;
+    })
+  })
+}
+
+let activeProductColor = "#ffffff";
+productsWithChangableCategories.forEach(_colorBtn => {
+  if (_colorBtn.classList.contains("active")) {
+    activeProductColor = "#" + _colorBtn.getAttribute("data-color")
+  }
+})
+changeColorOfCurrentProductListPictures(activeProductColor);
 
 const changeSelectedItem = (e) => {
   productsWithChangableCategories.forEach((item) => {
@@ -54,28 +84,22 @@ const changeSelectedItem = (e) => {
   e.target.closest("li").classList?.add("active");
 
   const currentColor = `#${e.target.closest("li").getAttribute("data-color")}`;
-
-  categoryProducts.forEach((_categoryProductDiv) => {
-    const svgList = _categoryProductDiv.querySelectorAll("svg");
-    svgList.forEach(_svg => {
-      _svg.style.fill = currentColor;
-      _svg.querySelectorAll("path").forEach((_path) => {
-        _path.style.fill = currentColor;
-      })
-    })
-  })
+  changeColorOfCurrentProductListPictures(currentColor)
 }
 productsWithChangableCategories.forEach(_element => {
   _element.addEventListener("click", changeSelectedItem)
 });
 
-categoryProducts.forEach((_productWrapper) => {
-  const wrapperStylesheet = getComputedStyle(_productWrapper);
-  // aspect ratio 1:1
-  _productWrapper.style.height = wrapperStylesheet.width;
-  // _productWrapper.querySelector
-});
-
+const makeQuadraticAspectRatioOnProducts = () => {
+  secondaryProducts.forEach((_productWrapper) => {
+    const wrapperStylesheet = getComputedStyle(_productWrapper);
+    // aspect ratio 1:1
+    _productWrapper.style.height = wrapperStylesheet.width;
+    // _productWrapper.querySelector
+  });
+}
+makeQuadraticAspectRatioOnProducts();
+window.addEventListener("resize", makeQuadraticAspectRatioOnProducts);
 
 
 // Input validation
