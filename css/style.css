@@ -49,6 +49,7 @@ img {
 
 /* Component styles */
 .btn-orange {
+  font-family: "Roboto";
   font-size: 15px;
   background-color: var(--color-outrageous-orange);
   padding: 12px 21px;
@@ -156,7 +157,7 @@ nav.main ul.pages li.active a {
   color: #fff;
 }
 
-nav.main > div {
+nav.main>div {
   flex: 1;
 }
 
@@ -168,24 +169,24 @@ nav.main > div {
   height: 29px;
 }
 
-nav.main > .bars {
+nav.main>.bars {
   display: flex;
   justify-content: end;
   align-items: center;
 }
 
-nav.main > .bars > ul {
+nav.main>.bars>ul {
   display: flex;
   justify-content: end;
   gap: 25px;
 }
 
-nav.main > .bars svg {
+nav.main>.bars svg {
   width: 22px;
   height: 22px;
 }
 
-nav.main > .bars > ul > li {
+nav.main>.bars>ul>li {
   cursor: pointer;
   display: flex;
   justify-content: end;
@@ -389,7 +390,7 @@ section#home-clipped-image .bg-rated-product {
   width: 15px;
 }
 
-.rating-card .star-box > div {
+.rating-card .star-box>div {
   display: flex;
   background-color: #44ae6f;
   padding: 3px;
@@ -456,7 +457,7 @@ section#home-clipped-image .rating-card {
   gap: 20px;
 }
 
-.product-reviewer .change-category > span {
+.product-reviewer .change-category>span {
   color: #8f8f8f;
   font-size: 14px;
 }
@@ -524,23 +525,23 @@ section#home-clipped-image .rating-card {
 }
 
 #selected-product-category .changable-products {
-  display: flex;
-  row-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
   margin-top: 25px;
 }
 
 #selected-product-category .secondary-products {
   flex-grow: 1;
   display: grid;
-  column-gap: 3px;
-  row-gap: 4px;
+  gap: 4px;
   grid-template-columns: 50% 50%;
+  width: 100%;
   margin-right: 4px;
 }
 
 .secondary-products .product-small-wrapper {
   padding: 10px;
-  place-items: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -551,12 +552,13 @@ section#home-clipped-image .rating-card {
 
 .secondary-products .product-small-item {
   position: relative;
-  max-width: 260px;
   height: fit-content;
 }
 
 .secondary-products .product-small-item img {
-  height: 80px;
+  max-width: 300px;
+  max-height: 150px;
+  height: auto;
 }
 
 .secondary-products .colorer {
@@ -603,10 +605,9 @@ section#home-clipped-image .rating-card {
 }
 
 #selected-product-category .primary-product img {
-  max-width: 100%;
+  max-width: 80%;
   width: auto;
   max-height: 100%;
-  height: 207px;
 }
 
 #selected-product-category .primary-product-item {
@@ -670,8 +671,7 @@ section#home-scrolling-image {
 
 #home-scrolling-image .endless-scroll {
   gap: 10px;
-  background-color: #00000020;
-  bottom: 5px;
+  bottom: 0;
   left: 100%;
   display: flex;
   white-space: nowrap;
@@ -679,6 +679,10 @@ section#home-scrolling-image {
   height: fit-content;
   position: absolute;
   /* overflow: hidden; */
+}
+
+#home-scrolling-image .endless-scroll h1 {
+  margin: 0;
 }
 
 /* Section companies */

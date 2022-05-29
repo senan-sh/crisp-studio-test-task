@@ -163,7 +163,7 @@ const scrollingDivOverImage = document.querySelector("#home-scrolling-image .end
 const scrollingStyleSheet = getComputedStyle(scrollingDivOverImage)
 setInterval(() => {
   scrollingDivOverImage.style.left = `${Number.parseInt(scrollingStyleSheet.left, 10) - 1}px`
-}, 2);
+}, 10);
 setInterval(() => {
   const childElement = scrollingDivOverImage.children[0];
   const newLeft = Number.parseInt(scrollingDivOverImage.style.left, 10) + childElement.clientWidth;
