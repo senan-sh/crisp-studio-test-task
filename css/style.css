@@ -261,7 +261,7 @@ nav.small li path {
 
 #hero-images .bg-image {
   flex: 1;
-  height: 50vh;
+  height: 100vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -281,7 +281,6 @@ nav.small li path {
 #home-intro-cards .know-more h3 {
   line-height: 1.2;
   margin: 0;
-  font-size: 30px;
   font-weight: 400;
   max-width: 400px;
 }
@@ -588,7 +587,7 @@ section#home-clipped-image .rating-card {
   opacity: 0.5;
 }
 
-.secondary-products .colorer svg {
+.colorer svg {
   width: 100%;
   height: 100%;
 }
