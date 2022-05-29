@@ -348,7 +348,6 @@ section#home-clipped-image .bg-rated-product {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: url("/img/b-g-art.png");
   position: relative;
 }
 
