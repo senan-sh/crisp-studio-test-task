@@ -97,6 +97,13 @@ const makeQuadraticAspectRatioOnProducts = () => {
     _productWrapper.style.height = wrapperStylesheet.width;
     // _productWrapper.querySelector
   });
+
+  if (mainProduct.parentElement.clientWidth > (window.innerWidth / 2)) {
+    const mainProductStylesheet = getComputedStyle(mainProduct.parentElement);
+    mainProduct.parentElement.style.height = mainProductStylesheet.width;
+  } else {
+    mainProduct.parentElement.style.height = "unset";
+  }
 }
 makeQuadraticAspectRatioOnProducts();
 window.addEventListener("resize", makeQuadraticAspectRatioOnProducts);
@@ -149,3 +156,19 @@ subscribeEmailInput.addEventListener("blur", () => {
     }
   }
 });
+
+
+// Image scrolling over image more dynamic way
+const scrollingDivOverImage = document.querySelector("#home-scrolling-image .endless-scroll");
+const scrollingStyleSheet = getComputedStyle(scrollingDivOverImage)
+setInterval(() => {
+  scrollingDivOverImage.style.left = `${Number.parseInt(scrollingStyleSheet.left, 10) - 1}px`
+}, 2);
+setInterval(() => {
+  const childElement = scrollingDivOverImage.children[0];
+  scrollingDivOverImage.style.left = `${Number.parseInt(scrollingDivOverImage.style.left, 10) + childElement.clientWidth}px`
+  const innerElement = childElement.cloneNode();
+  innerElement.innerText = childElement.innerText;
+  scrollingDivOverImage.appendChild(innerElement)
+  scrollingDivOverImage.children[0].remove();
+}, 5000);

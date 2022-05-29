@@ -43,7 +43,7 @@ img {
   --color-gray: #292c35;
   --color-dark-blue: #22425a;
   --color-outrageous-orange: #ff7144;
-  --color-shadowed-gray: #CCC8C2;
+  --color-shadowed-gray: #ccc8c2;
   --color-danger: #f55656;
 }
 
@@ -156,7 +156,7 @@ nav.main ul.pages li.active a {
   color: #fff;
 }
 
-nav.main>div {
+nav.main > div {
   flex: 1;
 }
 
@@ -168,24 +168,24 @@ nav.main>div {
   height: 29px;
 }
 
-nav.main>.bars {
+nav.main > .bars {
   display: flex;
   justify-content: end;
   align-items: center;
 }
 
-nav.main>.bars>ul {
+nav.main > .bars > ul {
   display: flex;
   justify-content: end;
   gap: 25px;
 }
 
-nav.main>.bars svg {
+nav.main > .bars svg {
   width: 22px;
   height: 22px;
 }
 
-nav.main>.bars>ul>li {
+nav.main > .bars > ul > li {
   cursor: pointer;
   display: flex;
   justify-content: end;
@@ -390,7 +390,7 @@ section#home-clipped-image .bg-rated-product {
   width: 15px;
 }
 
-.rating-card .star-box>div {
+.rating-card .star-box > div {
   display: flex;
   background-color: #44ae6f;
   padding: 3px;
@@ -457,7 +457,7 @@ section#home-clipped-image .rating-card {
   gap: 20px;
 }
 
-.product-reviewer .change-category>span {
+.product-reviewer .change-category > span {
   color: #8f8f8f;
   font-size: 14px;
 }
@@ -526,11 +526,12 @@ section#home-clipped-image .rating-card {
 
 #selected-product-category .changable-products {
   display: flex;
+  row-gap: 10px;
   margin-top: 25px;
 }
 
 #selected-product-category .secondary-products {
-  flex: 1;
+  flex-grow: 1;
   display: grid;
   column-gap: 3px;
   row-gap: 4px;
@@ -544,7 +545,7 @@ section#home-clipped-image .rating-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   border-radius: 30px;
   position: relative;
 }
@@ -554,7 +555,6 @@ section#home-clipped-image .rating-card {
   max-width: 260px;
   height: fit-content;
 }
-
 
 .secondary-products .product-small-item img {
   height: 80px;
@@ -595,9 +595,9 @@ section#home-clipped-image .rating-card {
 
 #selected-product-category .primary-product {
   position: relative;
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   border-radius: 30px;
-  flex: 1;
+  flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -612,6 +612,7 @@ section#home-clipped-image .rating-card {
 
 #selected-product-category .primary-product-item {
   position: relative;
+  overflow: hidden;
 }
 
 .primary-product-item .colorer {
@@ -621,7 +622,6 @@ section#home-clipped-image .rating-card {
   width: 100%;
   height: 100%;
 }
-
 
 .primary-product .name-price {
   position: absolute;
@@ -659,6 +659,7 @@ section#home-scrolling-image {
   width: 100%;
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
 #home-scrolling-image .bg-overlay {
@@ -670,40 +671,14 @@ section#home-scrolling-image {
 
 #home-scrolling-image .endless-scroll {
   background-color: #00000020;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-}
-
-.endless-scroll h1 {
-  margin: 0 auto;
+  bottom: 5px;
+  left: 100%;
+  display: flex;
   white-space: nowrap;
-  overflow: hidden;
-  position: absolute;
   color: #ffffff;
-  bottom: 0%;
-  display: inline-block;
-  padding-left: 100%;
-  animation-name: scroll-endless;
-  animation-duration: 15s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.endless-scroll h1.second {
-  /* resize */
-  animation-delay: 7.5s;
-}
-
-@keyframes scroll-endless {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(-100%, 0);
-  }
+  height: fit-content;
+  position: absolute;
+  /* overflow: hidden; */
 }
 
 /* Section companies */
@@ -791,7 +766,7 @@ footer form {
 footer .input-control {
   padding: 10px 20px;
   border-radius: 40px;
-  border: 1px solid #D8D8D8;
+  border: 1px solid #d8d8d8;
   outline: none;
   font-size: 16px;
   font-weight: 400;
@@ -800,7 +775,6 @@ footer .input-control {
 .input-control.invalid {
   border: 1px solid red;
 }
-
 
 footer .input-control::placeholder {
   opacity: 0.5;
@@ -862,7 +836,7 @@ footer .footer-logo svg {
 }
 
 footer .footer-logo path {
-  fill: #F3F3F3;
+  fill: #f3f3f3;
 }
 
 footer .copyright-terms {
