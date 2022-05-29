@@ -166,9 +166,13 @@ setInterval(() => {
 }, 2);
 setInterval(() => {
   const childElement = scrollingDivOverImage.children[0];
-  scrollingDivOverImage.style.left = `${Number.parseInt(scrollingDivOverImage.style.left, 10) + childElement.clientWidth}px`
+  const newLeft = Number.parseInt(scrollingDivOverImage.style.left, 10) + childElement.clientWidth;
+  if (newLeft > 0) {
+    return;
+  }
+  scrollingDivOverImage.style.left = `${newLeft}px`;
   const innerElement = childElement.cloneNode();
   innerElement.innerText = childElement.innerText;
   scrollingDivOverImage.appendChild(innerElement)
   scrollingDivOverImage.children[0].remove();
-}, 5000);
+}, 3000);

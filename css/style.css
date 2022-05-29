@@ -669,6 +669,7 @@ section#home-scrolling-image {
 }
 
 #home-scrolling-image .endless-scroll {
+  gap: 10px;
   background-color: #00000020;
   bottom: 5px;
   left: 100%;
